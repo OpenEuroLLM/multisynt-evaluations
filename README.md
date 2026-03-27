@@ -2,23 +2,23 @@
 
 Models follow the naming convention `MultiSynt/nemotron-cc-{language}-{translation-model}`.
 
-| Language   | tower9b | tower72b | opus | include | belebele | flores |
-|------------|:-------:|:--------:|:----:|:-------:|:--------:|:------:|
-| Basque     | ✗       | ✗        | ✓    | ✓       | ✗        | ✗      |
-| Catalan    | ✗       | ✗        | ✓    | ✗       | ✗        | ✗      |
-| Danish     | ✓       | ✗        | ✓    | ✗       | ✓        | ✓      |
-| Dutch      | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |
-| Finnish    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |
-| French     | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |
-| German     | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |
-| Icelandic  | ✓       | ✗        | ✓    | ✗       | ✗        | ✗      |
-| Italian    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |
-| Norwegian  | ✓       | ✗        | ✗    | ✗       | ✗        | ✗      |
-| Polish     | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |
-| Portuguese | ✗       | ✗        | ✓    | ✓       | ✓        | ✓      |
-| Romanian   | ✓       | ✗        | ✓    | ✗       | ✓        | ✓      |
-| Spanish    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |
-| Swedish    | ✓       | ✓        | ✓    | ✗       | ✓        | ✓      |
+| Language   | tower9b | tower72b | opus | include | belebele | flores | others                  |
+|------------|:-------:|:--------:|:----:|:-------:|:--------:|:------:|-------------------------|
+| Basque     | ✗       | ✗        | ✓    | ✓       | ✓        | ✗      |                         |
+| Catalan    | ✗       | ✗        | ✓    | ✗       | ✓        | ✗      | copa_ca                 |
+| Danish     | ✓       | ✗        | ✓    | ✗       | ✓        | ✓      |                         |
+| Dutch      | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |                         |
+| Finnish    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |                         |
+| French     | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |                         |
+| German     | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |                         |
+| Icelandic  | ✓       | ✗        | ✓    | ✗       | ✗        | ✗      | icelandic_winogrande    |
+| Italian    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |                         |
+| Norwegian  | ✓       | ✗        | ✗    | ✗       | ✓        | ✗      |                         |
+| Polish     | ✓       | ✗        | ✓    | ✓       | ✓        | ✓      |                         |
+| Portuguese | ✗       | ✗        | ✓    | ✓       | ✓        | ✓      |                         |
+| Romanian   | ✓       | ✗        | ✓    | ✗       | ✓        | ✓      |                         |
+| Spanish    | ✓       | ✓        | ✓    | ✓       | ✓        | ✓      |                         |
+| Swedish    | ✓       | ✓        | ✓    | ✗       | ✓        | ✓      |                         |
 
 ## Analysis
 
@@ -35,7 +35,8 @@ Unlike HPLT2 monolingual models, no model has intermediate checkpoints available
 - **include**: Basque, Dutch, Finnish, French, German, Italian, Polish, Portuguese, Spanish (9/15 languages)
 - **belebele**: Danish, Dutch, Finnish, French, German, Italian, Polish, Portuguese, Romanian, Spanish, Swedish (11/15 languages)
 - **flores**: Danish, Dutch, Finnish, French, German, Italian, Polish, Portuguese, Romanian, Spanish, Swedish (11/15 languages)
-- **No benchmark coverage**: Catalan, Icelandic, Norwegian
+- **No benchmark coverage**: (none)
+- **icelandic_winogrande** (lm-eval-harness): Icelandic
 - **Only include (not belebele/flores)**: Basque
 - **belebele and flores but not include**: Danish, Romanian, Swedish
 

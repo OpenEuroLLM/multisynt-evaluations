@@ -60,9 +60,11 @@ HPLT_LANG_CODE_MAP = {
 LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
     "basque": [
         ("include_base_44_basque", 0, "lm-eval-harness"),
+        ("belebele_eus_Latn", 5, "lm-eval-harness"),
     ],
     "catalan": [
-        # No language-specific benchmarks available yet
+        ("belebele_cat_Latn", 5, "lm-eval-harness"),
+        ("copa_ca", 0, "lm-eval-harness"),
     ],
     "danish": [
         ("belebele_dan_Latn", 5, "lm-eval-harness"),
@@ -99,7 +101,7 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("include_base_44_german", 0, "lm-eval-harness"),
     ],
     "icelandic": [
-        # No language-specific benchmarks available yet
+        ("icelandic_winogrande", 0, "lm-eval-harness"),
     ],
     "italian": [
         ("belebele_ita_Latn", 5, "lm-eval-harness"),
@@ -109,7 +111,7 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("include_base_44_italian", 0, "lm-eval-harness"),
     ],
     "norwegian": [
-        # No language-specific benchmarks available yet
+        ("belebele_nob_Latn", 5, "lm-eval-harness"),
     ],
     "polish": [
         ("belebele_pol_Latn", 5, "lm-eval-harness"),
