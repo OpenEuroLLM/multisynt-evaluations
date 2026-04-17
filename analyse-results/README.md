@@ -32,61 +32,58 @@ Basque, Catalan, Danish, Dutch, Finnish, French, German, Icelandic, Italian, Nor
 Bold values indicate the best score per row. When scores are equal, both are bolded.
 
 ### All benchmarks
-
-| language   | benchmark   | HPLT (native)             | MultiSynt (artificial)        |
+| language   | benchmark   | HPLT (artificial=False)   | MultiSynt (artificial=True)   |
 |:-----------|:------------|:--------------------------|:------------------------------|
-| basque     | belebele    | 0.2167                    | **0.2267**                    |
+| basque     | belebele    | 0.2841                    | **0.3022**                    |
 | basque     | include     | **0.2660**                | **0.2660**                    |
-| catalan    | belebele    | **0.2556**                | 0.2267                        |
+| catalan    | belebele    | 0.3215                    | **0.3726**                    |
 | catalan    | copa        | 0.6580                    | **0.6880**                    |
-| danish     | belebele    | **0.2411**                | 0.2333                        |
+| danish     | belebele    | 0.3048                    | **0.3459**                    |
 | danish     | flores200   | **7.0235**                | 1.1157                        |
-| dutch      | belebele    | 0.2222                    | **0.2344**                    |
+| dutch      | belebele    | 0.3363                    | **0.3559**                    |
 | dutch      | flores200   | **12.5997**               | 1.9584                        |
 | dutch      | global      | 0.2572                    | **0.2694**                    |
 | dutch      | include     | 0.1325                    | **0.3176**                    |
-| finnish    | belebele    | **0.2600**                | 0.2400                        |
+| finnish    | belebele    | 0.3267                    | **0.3437**                    |
 | finnish    | flores200   | **4.0573**                | 2.0967                        |
 | finnish    | include     | 0.2323                    | **0.2650**                    |
-| french     | belebele    | **0.2311**                | **0.2311**                    |
+| french     | belebele    | 0.3444                    | **0.3607**                    |
 | french     | flores200   | **33.4790**               | 2.3657                        |
 | french     | global      | **0.2617**                | 0.2594                        |
 | french     | include     | 0.2625                    | **0.2721**                    |
 | french     | mgsm        | **0.0240**                | 0.0080                        |
-| german     | belebele    | 0.2678                    | **0.2867**                    |
+| german     | belebele    | 0.3493                    | **0.3659**                    |
 | german     | flores200   | **24.9519**               | 1.3784                        |
 | german     | global      | 0.2443                    | **0.2607**                    |
 | german     | include     | **0.3381**                | 0.2662                        |
 | german     | mgsm        | 0.0120                    | **0.0280**                    |
 | icelandic  | icelandic   | 0.5110                    | **0.5956**                    |
-| italian    | belebele    | 0.2322                    | **0.2722**                    |
+| italian    | belebele    | 0.3144                    | **0.3678**                    |
 | italian    | flores200   | **22.1046**               | 1.5019                        |
 | italian    | global      | **0.2668**                | 0.2502                        |
 | italian    | include     | **0.2591**                | 0.2318                        |
-| norwegian  | belebele    | 0.2378                    | **0.2433**                    |
-| polish     | belebele    | **0.2622**                | 0.2433                        |
+| norwegian  | belebele    | 0.3126                    | **0.3426**                    |
+| polish     | belebele    | 0.3237                    | **0.3441**                    |
 | polish     | flores200   | **9.0725**                | 1.1510                        |
 | polish     | global      | **0.2480**                | 0.2432                        |
 | polish     | include     | **0.2719**                | 0.2062                        |
-| portuguese | belebele    | 0.2567                    | **0.2733**                    |
+| portuguese | belebele    | 0.3419                    | **0.3719**                    |
 | portuguese | flores200   | **34.2722**               | 1.9077                        |
 | portuguese | global      | 0.2615                    | **0.2684**                    |
 | portuguese | include     | 0.2105                    | **0.2541**                    |
-| romanian   | belebele    | **0.2489**                | 0.2444                        |
+| romanian   | belebele    | 0.3304                    | **0.3726**                    |
 | romanian   | flores200   | **12.2645**               | 1.2099                        |
 | romanian   | global      | 0.2420                    | **0.2631**                    |
-| spanish    | belebele    | **0.2700**                | 0.2644                        |
+| spanish    | belebele    | 0.3619                    | **0.3741**                    |
 | spanish    | flores200   | **20.0892**               | 1.0100                        |
 | spanish    | global      | 0.2659                    | **0.2831**                    |
 | spanish    | include     | **0.2600**                | 0.2345                        |
 | spanish    | mgsm        | **0.0240**                | 0.0120                        |
-| swedish    | belebele    | **0.2378**                | 0.2311                        |
+| swedish    | belebele    | 0.3259                    | **0.3593**                    |
 | swedish    | flores200   | **19.6873**               | 1.9793                        |
 | swedish    | global      | **0.2514**                | 0.2488                        |
 
-### Flores200 by direction
-
-Flores200 scores are BLEU. The gap between HPLT and MultiSynt here is much larger than on other benchmarks and warrants a separate look. HPLT models dominate in almost every case — likely because they generate natural native-sounding text that better matches the human reference translations used for BLEU scoring. MultiSynt models produce "translationese" that overlaps poorly with native references. The size of the gap (often 10–30 BLEU points) also suggests MultiSynt models may be outputting English or near-gibberish for some translation prompts, pointing to a possible prompt format mismatch rather than a pure quality gap. Finnish `eng→target` is the sole exception where MultiSynt wins (3.42 vs 0.93).
+## Flores200 by direction
 
 | language   | direction   | HPLT (native)   | MultiSynt (artificial)   |
 |:-----------|:------------|:----------------|:-------------------------|
@@ -113,13 +110,11 @@ Flores200 scores are BLEU. The gap between HPLT and MultiSynt here is much large
 | swedish    | eng→target  | **18.81**       | 3.60                     |
 | swedish    | target→eng  | **20.56**       | 0.36                     |
 
-### Win rate: MultiSynt (artificial) vs HPLT (native)
-
-Win rate is the fraction of languages where MultiSynt outperforms HPLT on a given benchmark. Flores200 is included for completeness but should be interpreted with caution (see above).
+## Win rate: MultiSynt (artificial) vs HPLT (native)
 
 | benchmark   | win_rate   |
 |:------------|:-----------|
-| belebele    | 43%        |
+| belebele    | 100%       |
 | copa        | 100%       |
 | flores200   | 0%         |
 | global      | 56%        |
@@ -134,7 +129,7 @@ Win rate is the fraction of languages where MultiSynt outperforms HPLT on a give
 Excluding flores200 (where evaluation validity is questionable for MultiSynt models), results across knowledge and reasoning benchmarks are broadly competitive:
 
 - **global_mmlu**: MultiSynt leads in 56% of languages — a slight but consistent advantage for artificial training data on translated knowledge tasks.
-- **belebele / include**: roughly even (~43–44%), with no clear winner.
+- **belebele / include**: MultiSynt wins in 100% of evaluated languages (14/14). Average scores — HPLT: 0.3270, MultiSynt: 0.3557 (absolute +0.0287, relative +8.8%). Largest gains: Italian +0.0534, Catalan +0.0511, Romanian +0.0422; smallest gain: Spanish +0.0122. Takeaway: MultiSynt consistently outperforms HPLT on the belebele reading-comprehension benchmark across the evaluated languages.
 - **mgsm**: HPLT leads (67% win rate), suggesting native data is better for math reasoning in the target language.
 - **copa / icelandic_winogrande**: MultiSynt wins in both cases, though these cover only one or two languages each.
 

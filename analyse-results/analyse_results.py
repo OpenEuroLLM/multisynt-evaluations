@@ -45,6 +45,13 @@ def extract_language(model_name: str) -> str:
 
 df = pd.read_csv(Path(__file__).parent / "results.csv")
 
+# Load results_cf.csv and filter out task='all'
+eval_df = pd.read_csv(Path(__file__).parent / "results_belebele_cf.csv")
+eval_df = eval_df[eval_df["task"] != "all"]
+
+# Combine both dataframes
+df = pd.concat([df, eval_df], ignore_index=True)
+
 def abbreviate_benchmark(task: str) -> str:
     return task.split("_")[0].split(":")[0]
 

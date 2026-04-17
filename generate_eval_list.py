@@ -61,15 +61,18 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
     "basque": [
         ("include_base_44_basque", 0, "lm-eval-harness"),
         ("belebele_eus_Latn", 5, "lm-eval-harness"),
+        ("belebele_eus_Latn_cf", 5, "lighteval"),
     ],
     "catalan": [
         ("belebele_cat_Latn", 5, "lm-eval-harness"),
         ("copa_ca", 0, "lm-eval-harness"),
+        ("belebele_cat_Latn_cf", 5, "lighteval"),
     ],
     "danish": [
         ("belebele_dan_Latn", 5, "lm-eval-harness"),
         ("flores200:dan_Latn-eng_Latn", 0, "lighteval"),
         ("flores200:eng_Latn-dan_Latn", 0, "lighteval"),
+        ("belebele_dan_Latn_cf", 5, "lighteval"),
     ],
     "dutch": [
         ("belebele_nld_Latn", 5, "lm-eval-harness"),
@@ -77,12 +80,14 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("flores200:eng_Latn-nld_Latn", 0, "lighteval"),
         ("global_mmlu_full_nl", 5, "lm-eval-harness"),
         ("include_base_44_dutch", 0, "lm-eval-harness"),
+        ("belebele_nld_Latn_cf", 5, "lighteval"),
     ],
     "finnish": [
         ("belebele_fin_Latn", 5, "lm-eval-harness"),
         ("flores200:fin_Latn-eng_Latn", 0, "lighteval"),
         ("flores200:eng_Latn-fin_Latn", 0, "lighteval"),
         ("include_base_44_finnish", 0, "lm-eval-harness"),
+        ("belebele_fin_Latn_cf", 5, "lighteval"),
     ],
     "french": [
         ("belebele_fra_Latn", 5, "lm-eval-harness"),
@@ -91,6 +96,7 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("global_mmlu_full_fr", 5, "lm-eval-harness"),
         ("mgsm_native_cot_fr", 5, "lm-eval-harness"),
         ("include_base_44_french", 0, "lm-eval-harness"),
+        ("belebele_fra_Latn_cf", 5, "lighteval"),
     ],
     "german": [
         ("belebele_deu_Latn", 5, "lm-eval-harness"),
@@ -99,6 +105,7 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("global_mmlu_full_de", 5, "lm-eval-harness"),
         ("mgsm_native_cot_de", 5, "lm-eval-harness"),
         ("include_base_44_german", 0, "lm-eval-harness"),
+        ("belebele_deu_Latn_cf", 5, "lighteval"),
     ],
     "icelandic": [
         ("icelandic_winogrande", 0, "lm-eval-harness"),
@@ -109,9 +116,11 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("flores200:eng_Latn-ita_Latn", 0, "lighteval"),
         ("global_mmlu_full_it", 5, "lm-eval-harness"),
         ("include_base_44_italian", 0, "lm-eval-harness"),
+        ("belebele_ita_Latn_cf", 5, "lighteval"),
     ],
     "norwegian": [
         ("belebele_nob_Latn", 5, "lm-eval-harness"),
+        ("belebele_nob_Latn_cf", 5, "lighteval"),
     ],
     "polish": [
         ("belebele_pol_Latn", 5, "lm-eval-harness"),
@@ -119,6 +128,7 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("flores200:eng_Latn-pol_Latn", 0, "lighteval"),
         ("global_mmlu_full_pl", 5, "lm-eval-harness"),
         ("include_base_44_polish", 0, "lm-eval-harness"),
+        ("belebele_pol_Latn_cf", 5, "lighteval"),
     ],
     "portuguese": [
         ("belebele_por_Latn", 5, "lm-eval-harness"),
@@ -126,12 +136,14 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("flores200:eng_Latn-por_Latn", 0, "lighteval"),
         ("global_mmlu_full_pt", 5, "lm-eval-harness"),
         ("include_base_44_portuguese", 0, "lm-eval-harness"),
+        ("belebele_por_Latn_cf", 5, "lighteval"),
     ],
     "romanian": [
         ("belebele_ron_Latn", 5, "lm-eval-harness"),
         ("flores200:ron_Latn-eng_Latn", 0, "lighteval"),
         ("flores200:eng_Latn-ron_Latn", 0, "lighteval"),
         ("global_mmlu_full_ro", 5, "lm-eval-harness"),
+        ("belebele_ron_Latn_cf", 5, "lighteval"),
     ],
     "spanish": [
         ("belebele_spa_Latn", 5, "lm-eval-harness"),
@@ -140,12 +152,14 @@ LANGUAGE_TASKS: dict[str, list[tuple[str, int, str]]] = {
         ("global_mmlu_full_es", 5, "lm-eval-harness"),
         ("mgsm_native_cot_es", 5, "lm-eval-harness"),
         ("include_base_44_spanish", 0, "lm-eval-harness"),
+        ("belebele_spa_Latn_cf", 5, "lighteval"),
     ],
     "swedish": [
         ("belebele_swe_Latn", 5, "lm-eval-harness"),
         ("flores200:swe_Latn-eng_Latn", 0, "lighteval"),
         ("flores200:eng_Latn-swe_Latn", 0, "lighteval"),
         ("global_mmlu_full_sv", 5, "lm-eval-harness"),
+        ("belebele_swe_Latn_cf", 5, "lighteval"),
     ],
 }
 
