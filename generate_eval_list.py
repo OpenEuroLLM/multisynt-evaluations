@@ -170,14 +170,14 @@ COMMON_TASKS: list[tuple[str, int, str]] = []
 def get_language_multisynt(model: str) -> str:
     # e.g. MultiSynt/nemotron-cc-danish-tower9b → danish
     name = model.split("/")[1]  # nemotron-cc-danish-tower9b
-    parts = name.split("-")     # ['nemotron', 'cc', 'danish', 'tower9b']
+    parts = name.split("-")  # ['nemotron', 'cc', 'danish', 'tower9b']
     return parts[2]
 
 
 def get_language_hplt(model: str) -> str:
     # e.g. HPLT/hplt2c_dan_checkpoints → danish
-    name = model.split("/")[1]          # hplt2c_dan_checkpoints
-    code = name.split("_")[1]           # dan
+    name = model.split("/")[1]  # hplt2c_dan_checkpoints
+    code = name.split("_")[1]  # dan
     return HPLT_LANG_CODE_MAP[code]
 
 
@@ -187,24 +187,27 @@ def generate_rows(models: list[str], get_language) -> list[dict]:
         language = get_language(model)
         tasks = COMMON_TASKS + LANGUAGE_TASKS.get(language, [])
         for task_path, n_shot, eval_suite in tasks:
-            rows.append({
-                "model_path": model,
-                "task_path": task_path,
-                "n_shot": n_shot,
-                "eval_suite": eval_suite,
-            })
+            rows.append(
+                {
+                    "model_path": model,
+                    "task_path": task_path,
+                    "n_shot": n_shot,
+                    "eval_suite": eval_suite,
+                }
+            )
     return rows
 
 
 def main():
-    rows = (
-        generate_rows(MULTISYNT_MODELS, get_language_multisynt)
-        + generate_rows(HPLT_MODELS, get_language_hplt)
+    rows = generate_rows(MULTISYNT_MODELS, get_language_multisynt) + generate_rows(
+        HPLT_MODELS, get_language_hplt
     )
 
     output_path = "multisynt_evals.csv"
     with open(output_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["model_path", "task_path", "n_shot", "eval_suite"])
+        writer = csv.DictWriter(
+            f, fieldnames=["model_path", "task_path", "n_shot", "eval_suite"]
+        )
         writer.writeheader()
         writer.writerows(rows)
 

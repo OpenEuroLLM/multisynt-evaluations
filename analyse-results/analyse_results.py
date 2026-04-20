@@ -52,6 +52,7 @@ eval_df = eval_df[eval_df["task"] != "all"]
 # Combine both dataframes
 df = pd.concat([df, eval_df], ignore_index=True)
 
+
 def abbreviate_benchmark(task: str) -> str:
     return task.split("_")[0].split(":")[0]
 
@@ -75,7 +76,9 @@ perf_cols = ["HPLT (artificial=False)", "MultiSynt (artificial=True)"]
 def bold_max(row):
     best = row[perf_cols].max()
     return [
-        f"**{v:.4f}**" if (col in perf_cols and v == best) else (f"{v:.4f}" if col in perf_cols else v)
+        f"**{v:.4f}**"
+        if (col in perf_cols and v == best)
+        else (f"{v:.4f}" if col in perf_cols else v)
         for col, v in zip(row.index, row)
     ]
 
@@ -98,15 +101,24 @@ flores_table = flores.pivot_table(
     values="performance",
     aggfunc="mean",
 ).reset_index()
-flores_table.columns = ["language", "direction", "HPLT (native)", "MultiSynt (artificial)"]
+flores_table.columns = [
+    "language",
+    "direction",
+    "HPLT (native)",
+    "MultiSynt (artificial)",
+]
+
 
 def bold_max_flores(row):
     perf = ["HPLT (native)", "MultiSynt (artificial)"]
     best = row[perf].max()
     return [
-        f"**{v:.2f}**" if (col in perf and v == best) else (f"{v:.2f}" if col in perf else v)
+        f"**{v:.2f}**"
+        if (col in perf and v == best)
+        else (f"{v:.2f}" if col in perf else v)
         for col, v in zip(row.index, row)
     ]
+
 
 flores_str = flores_table.apply(bold_max_flores, axis=1, result_type="expand")
 flores_str.columns = flores_table.columns
